@@ -2,39 +2,6 @@ import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.Objects;
 
-class EmployeeComparator implements Comparator<Employee>{
-    @Override
-    public int compare(Employee o1, Employee o2) {
-        if(o1.getName().compareTo(o2.getName()) < 0){
-            return -1;
-        } else if (o1.getName().compareTo(o2.getName()) > 0) {
-            return 1;
-        }
-        else{
-            if(o1.getDeptName().compareTo(o2.getDeptName()) < 0){
-                return -1;
-            }
-            else if(o1.getDeptName().compareTo(o2.getDeptName()) > 0){
-                return 1;
-            }
-            else{
-                if(o1.getSalary() < o2.getSalary()) return -1;
-                else if(o1.getSalary() > o2.getSalary()) return 1;
-                else{
-                    if(o1.getDateOfBirth().isBefore(o2.getDateOfBirth())){
-                        return -1;
-                    } else if (o1.getDateOfBirth().isAfter(o2.getDateOfBirth())) {
-                        return 1;
-                    }
-                    else {
-                        return 0;
-                    }
-                }
-            }
-        }
-    }
-}
-
 public class Employee {
     private String name;
     private String deptName;
@@ -47,8 +14,6 @@ public class Employee {
         this.salary = salary;
         this.dateOfBirth = dateOfBirth;
     }
-
-
 
     @Override
     public boolean equals(Object o) {
